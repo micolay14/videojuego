@@ -1,0 +1,119 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+    int situaciones,arma ,duendes, ironman, hp, opciones, daño, ataque, batman, joker,batimovil , pinguino,harley, accion ;
+    char nombre[100];
+    hp=100;
+  
+    printf("bienvenido ingrese su nombre\n");
+    scanf("%s", nombre);
+    printf("%s escoge tu arma:\n", nombre);
+    printf("1-espada\n");
+    printf("2-pistola\n");
+    printf("3-batitraje\n");
+    scanf("%d",&arma);
+ 
+    switch(arma){
+        case 1: 
+        daño=90;
+        break;
+        
+        case 2:
+        daño=88;
+        break;
+    
+        case 3: 
+        daño=200;
+        break;
+    }
+    printf("aparece un guia explicandote que tu mision es observar que el joker a capturado a batman y la unica manera de salvarlo es que le entreges el batimovil/n");
+
+    //primer escenario 
+    if (situaciones == 1);{
+        printf("mientras caminabas por las calles de ciudad gotica aparecio unos duendes/n");
+        printf("elige tu accion que vas a tomar:\n1 pedir piedad \n2 luchar/n");
+        scanf("%d", &accion);
+
+        if (accion ==1) {
+            hp-=5; 
+            printf ("los duendes te tuvieron piedad pero te dan unos cuantos golpes y luego se van burlandose de lo cobarde que eres/n");
+        }else if (accion == 2){
+            if (arma >=10){
+                printf("como el macho pecho peludo que eres les das una paliza y continuas tu camino demostrandoles quien es el que manda/n");
+            }   
+        }
+    }
+    printf("sigues caminando por la ciudad y recibes una llamada del comisionado de policia informandote que tienes que diriguirte al banco porque tienen informes de que vieron al joker en ese lugar/n");
+
+    //segundo escenario 
+    if (situaciones == 1);{
+         printf("mientras estabas llegando al banco comenzaste a escuchar unas risas desde la alcantarilla de imprevisto explosiona una de las tapas y sale el pinguino montado en su carro/n"); 
+         printf("elige tu accion que vas a tomar:\n1 correr \n2 luchar/n"); 
+         scanf("%d", &accion);
+
+         if (accion ==1){
+                hp-=70; 
+                daño-=20; 
+                printf("recibes mucho daño y pierdes mucho daño de tu arma");
+        }else if (accion == 2){
+             if (arma >=80){
+             printf("logras vencer al pinguino y como recompensa te entregan diferentes atributo arma+20 y hp+40/n"); 
+              daño+=20; 
+              hp+=40; 
+            }
+         }
+    }
+     printf ("al adentrarte al banco averiguas que la locacion de batimovil es en el parque de diversiones y te dirigues para alla/n"); 
+
+     //tercer escenarion 
+    if (situaciones == 1);{
+         printf ("al llegar vez al batimovil en una caja de cristal que para abrirla tienes que responder una pregunta o dar 50 puntos de vida y 50 puntos de daño/n"); 
+         printf("quien gano la pelea entre superman y batman en la pelicula de batman vs superman:\n1 batman \n2superman /n");
+         scanf("%d", &accion);
+
+        if (accion ==1){
+            printf("lograte abrirlo y reciviste el batimovil y como recompensa extra ganaste 50 puntos de daño y 50 puntos de vida/n"); 
+            daño+=50; 
+            hp+=50;
+        }else if (accion == 2){
+             printf("no era la respuesta correcta recibes las consecuencias (-50 hp y - 50 de daño)/n"); 
+              daño-=50; 
+              hp-=50; 
+        }
+    }
+     printf("el comisionado de policia te esta llamadno para informarte que tienes que diriguirte con el batimocil hacia el asilo de arkar /n"); 
+     
+     //cuarta escenario 
+    if (situaciones == 1);{
+         printf("al llegar te adrentas todo esta oscuro y comienzas a escuhar un sonido es harley que quiere detenerte/n"); 
+         printf("elige tu accion que vas a tomar:\n1 esconderte \n2 luchar/n"); 
+         scanf("%d", &accion);
+        
+        if (accion ==1){ 
+            printf("corres despavorido pero logras evitar que te asesine peor te genera mucho daño,(pierdes 80 hp)/n ");
+            hp-=80:
+        }else if (accion ==2){
+            if (daño >=40){
+                printf("luchar arduamente contra harley y lograr ir ileso");
+            }
+        }
+    }    
+     //escenario final 
+    if (situaciones ==1); { 
+         printf("al entrar al cuarto que se encontraba al final del pasillo observas al joker en una computadora y a batman amarrado en un tuvo/n"); 
+         printf("elige una de las acciones: \n1 entrar con el batimovil \n2 ir a escondidas");   
+         scanf("%d", &accion);
+
+        if (accion ==1){ 
+            printf ("entras al vuarto destrozando todo y logras asesinar al joker, te bajas y desamarras a bartman y sales victorioso del juego"); 
+        }else if (accion ==2){
+            printf("el joker te descubre y no eres lo suficiente duerte para vencerlo el te captura y te asesina cruelmente frente a batman"); 
+            printf("game over"); 
+        }
+    }
+
+    return 0;
+}    
