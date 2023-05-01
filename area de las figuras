@@ -1,0 +1,131 @@
+#include <stdio.h>
+#include <math.h> 
+
+void circulo_area(float radio){
+  float areac;
+  areac = 3.141519*(radio*radio); 
+  printf("El area del circulo es: %.2f\n",areac);
+}
+void circulo_perimetro(float radio){
+  float perimetroc; 
+  perimetroc = 2*3.141519*radio; 
+  printf("El perimetro del circulo es: %.2f\n",perimetroc);
+}
+void circulo(){ 
+  float radio;
+  printf("Ingerese el area del circulo:"); 
+   scanf("%f",&radio);
+  circulo_area(radio);
+  circulo_perimetro(radio);
+}
+void triangulo_area(float base, float altura){
+  float areat;
+  areat= (base*altura)/2; 
+  printf("El area del triangulo es: %2f\n", areat); 
+}
+void triangulo_perimetro(float base){
+  float perimetrot;
+  perimetrot = 3*base;
+  printf("El perimetro del Triangulo es: %.2f\n",perimetrot);
+}
+void Triangulo(){
+    float base , altura;
+  printf("Ingrese la base del Triangulo: ");
+  scanf("%f",&base);
+  printf("Ingrese la altura del Trianfulo: ");
+  scanf("%f",&altura);
+  triangulo_area(base , altura);
+  triangulo_perimetro(base);
+}
+void cuadrado_area(int base){
+  float areacu; 
+  areacu = (base*base); 
+   printf("El area del Cuadrado es: %.2f\n",areacu);
+}
+void cuadrado_perimetro(int base){
+  float perimetrocu; 
+  perimetrocu = (base*4);
+  printf("El perimetro del Cuadrado es: %.2f\n",perimetrocu);
+} 
+void Cuadrado(){
+    float base;
+  printf("Ingrese la base del Cuadrado: ");
+  scanf("%f",&base);
+  cuadrado_area(base);
+  cuadrado_perimetro(base);
+}
+void rectangulo_area(int base , int altura){
+  float arear;
+  arear = base*altura;
+  printf("El area del Rectagunlo es: %.2f\n",arear);
+}
+void rectangulo_perimetro(int base, int altura){
+  float perimetror;
+  perimetror = (2*base)+(2*altura);
+  printf("El perimetro del Rectangulo es: %.2f\n",perimetror);
+}
+void rectangulo(){
+  float base, altura; 
+   printf("Ingrese la base del Rectangulo: ");
+  scanf("%f",&base);
+  printf("Ingrese la altura del Rectangulo: ");
+  scanf("%f",&altura);
+  rectangulo_area(base , altura);
+  rectangulo_perimetro(base , altura); 
+}
+void trapecio_area(int basea, int baseb , int altura){
+  float area; 
+  area = ((basea+baseb)*alt)/2;
+   printf("El area del Trapecio es: %.2f\n",area);
+}
+void trapecio_perimetro(int basea, int baseb, int lados){
+  float perimetro; 
+  perimetro = basea+baseb+(2*lados);
+  printf("El perimetro del Trapecio es: %.2f\n",perimetro);
+}
+void trapecio(){
+  float basea, baseb , lados , altura; 
+  printf("Ingrese la base mayor del Trapecio: ");
+  scanf("%f",&basea);
+  printf("Ingrese la base menor del Trapecio: ");
+  scanf("%f",&baseb);
+  printf("Ingrese los lados laterales del Trapecio: ");
+  scanf("%f",&lados);
+  printf("Ingrese la altura del Trapecio: ");
+  scanf("%f",&altura);
+  trapecio_area(basea , baseb , altura);
+  trapecio_perimetro(basea, baseb , lados);
+}
+void menu(){
+  int menu, opciones;
+  printf("escoja cual de las siguientes figuras quiere calcular el area  y el perimetro\n");
+  printf("1.circulo, 2,triangulo, 3.cuadrado, 4.rectangulo, 5.trapecio\n");
+  scanf("%d",&opciones);
+  
+  switch(opciones) {
+    case 1: 
+      circulo();
+    break;
+        
+    case 2:
+      Triangulo();
+    break;
+    
+    case 3: 
+      Cuadrado();
+    break;
+
+    case 4: 
+      rectangulo();
+    break;
+      
+    case 5: 
+      trapecio();
+    break;
+  }
+}
+
+int main(void) {
+  menu();
+  return 0;
+}
